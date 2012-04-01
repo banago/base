@@ -1,0 +1,136 @@
+/*
+Theme Name: Rooster Strategic Communications
+Theme URI: http://roostercomm.com/
+Description: Search engine optimized theme built by <a href="http://www.wplancer.com/">Baki Goxhaj</a> and designed by RoosterComm.
+Version: 1.0
+Author: Baki Goxhaj (aka Banago)
+Author URI: http://www.wplancer.com
+Tags: 3 columns, white, widgets, fixed width, blue, gravatars, business, search engine optimized,
+*/
+
+
+
+/* ------------- [ GLOBAL ] -------------- */
+* { margin:0; padding:0; }
+
+/* ------------- [ BODY ] -------------- */
+body { background:#f4f4f4 url(img/bg.gif) top center repeat-y; color:#303030; font:76% Book Antiqua,Arial,Verdana,Tahoma,sans-serif; }
+#wrap { background-color:#fff; color:#333; margin:0 auto; width:760px; }
+
+/* ------------- [ FLOATS ] -------------- */
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+
+/* ------------- [ LINKS ] -------------- */
+a { background-color:inherit; color:#286ea0; font-weight:bold; text-decoration:none; }
+a:hover { background-color:inherit; color:#286ea0; font-weight:bold; text-decoration:underline; }
+a img { border:0; }
+
+/* ------------- [ HEADER ] -------------- */
+#header { position: absolute; margin:0 0 0 40px; width:350px; left: 50%; text-align: right; }
+#header h1 { background-color:inherit; color:#555; font-size:2em; letter-spacing:-1px; margin:30px 30px 0 0; }
+#header h1 a { background-color:inherit; color:#555; text-decoration:none; }
+#header p { background-color:inherit; color:#777; font-size:1.1em; font-weight:bold; line-height:1.3em; margin:10px 30px 0 0; }
+#frontphoto { margin:0 0 10px; }
+
+/* ------------- [ SIDEBARS ] -------------- */
+#leftside { clear:left; float:left; line-height:1.5em; margin:0 0 5px; padding:0; width:140px; }
+#extras { float:right; line-height:1.4em; margin:0 0 5px; padding:0; width:140px; }
+#leftside p, #leftside ul, #leftside div.textwidget, #extras p, #extras ul, #extras div.textwidget { font-size:0.9em; margin:0 0 18px; }
+#leftside li, #extras li { line-height:1.2em; list-style:none; margin:0 0 6px; }
+#leftside ul ul, #extras ul ul { margin:6px 0 0 10px; }
+#leftside ul ul li, #extras ul ul li { margin:0 0 4px; }
+#leftside ul ul li a, #extras ul ul li a { font-weight:normal; }
+#leftside ul.linklist, #extras ul.linklist { font-size:1em; }
+#leftside ul.linklist ul, #extras ul.linklist ul { margin:0 0 20px; }
+#leftside ul.linklist ul li a, #extras ul.linklist ul li a { font-weight:bold; }
+#leftside h2, #leftside ul.linklist li h2, #leftside h3, #extras h2, #extras ul.linklist li h2, #extras h3, table#wp-calendar caption { background-color:inherit; color:#505050; font-size:1.3em; font-weight:normal; text-align:left; margin:0 0 6px; }
+#leftside label, #extras label { display:none; }
+
+/* ------------- [ MENU ] -------------- */
+ul.page { list-style:none; margin:0 0 20px; width:140px; }
+ul.page li { display:inline; line-height:1.4em; width:140px; }
+ul.page li a { background-color:#f4f4f4; border-left:0px solid #cccccc; color:#505050; float:left; font-weight:bold; margin-bottom:5px; padding:5px 1px 5px 5px; text-decoration:none; width:130px; }
+ul.page li a:hover, ul.page li.current_page_item a { background-color:#eaeaea; border-left:0px solid #286ea0; color:#505050; }
+ul.page ul { font-size:0.9em; margin:0 0 0 15px; padding:0 0 5px; width:125px; }
+ul.page ul a { padding:3px 1px 3px 5px; width:115px; }
+ul.page ul ul { width:113px; }
+ul.page ul ul a { width:100px; }
+
+/* ------------- [ CONTENT ] -------------- */
+#content { line-height:1.6em; margin:0 155px 5px; padding:0; }
+#contentwide { line-height:1.6em; margin:0 0 5px 150px; padding:0; }
+#content h2,#contentwide h2 { font-size:1.6em; margin:0 0 10px; }
+#content h3,#contentwide h3 { font-size:1.4em; margin:0 0 8px; }
+#content img,#contentwide img { border:1px solid #d0d0d0; float:left; margin:3px 10px 3px 0; }
+#content ul,#contentwide ul,#content ol,#contentwide ol { margin:0 0 16px 20px; }
+#content li,#contentwide li { padding:0 0 0 5px; }
+#content ul ul,#contentwide ul ul,#content ol ol,#contentwide ol ol { margin:0 0 0 16px; }
+
+/* ------------- [ FOOTER ] -------------- */
+#footer { border-top:2px solid #e0e0e0; font-size:0.9em; clear:both; color:#777; font-weight:normal; line-height:1.7em; margin:0 auto; padding:10px 0; text-align:center; width:760px; }
+#footer p { margin:0; padding:0; }
+#footer a { color:#777; font-weight:normal; text-decoration:none; }
+#footer a:hover { color:#555; text-decoration:underline; }
+#footer strong a { font-weight:bold; }
+#footer span.credits { font-size:1.1em; }
+
+/* Subpage menu */
+#subpages { border-bottom:1px solid #e0e0e0; border-left:1px solid #e0e0e0; float:right; font-weight:bold; line-height:1.3em; margin:-5px 0 8px 15px; padding:0 0 10px 10px; width:190px; }
+#subpages h2 { font-size:1.2em; font-weight:bold; letter-spacing:-1px; line-height:1.3em; margin:0 0 12px; }
+#subpages ul.submenu { line-height:1.4em; list-style:none; margin:0; }
+#subpages ul.submenu li { display:inline; line-height:1.4em; width:180px; padding:0; }
+#subpages ul.submenu li a { background-color:#f4f4f4; border-left:0px solid #cccccc; color:#505050; float:left; font-weight:bold; margin-bottom:5px; padding:3px 1px 3px 5px; text-decoration:none; width:180px; }
+#subpages ul.submenu li ul { margin:0 0 5px 10px; width:170px; }
+#subpages ul.submenu li ul li a { width:170px; }
+#subpages ul.submenu li ul ul { margin:0 0 5px 10px; width:160px; }
+#subpages ul.submenu li ul ul li a { width:160px; }
+#subpages ul.submenu li ul ul ul { margin:0 0 5px 10px; width:150px; }
+#subpages ul.submenu li ul ul ul li a { width:150px; }
+#subpages ul.submenu li a:hover,#subpages ul.submenu li.current_page_item a { background-color:#eaeaea; border-left:0px solid #286ea0; color:#555; }
+#subpages ul.submenu li.current_page_item ul li a { background-color:#f4f4f4; border-left:0px solid #cccccc; color:#555; }
+
+/* ------------- [ HTML ] -------------- */
+p,ul,ol { margin:0 0 18px; }
+blockquote { border-left:0px solid #e0e0e0; margin:20px; padding:8px 8px 8px 15px; }
+blockquote p { background-color:inherit; color:#505050; font-size:0.9em; line-height:1.3em; }
+label { background-color:inherit; color:#606060; font-size:0.9em; font-weight:bold; }
+table#wp-calendar { margin:0 0 20px; width:140px; }
+code { font-size:1.2em; display:block; padding:5px 5px 5px 8px; background-color:#f4f4f4; margin:5px 0 15px 0;border-left:0px solid #cccccc; }
+
+/* ------------- [ FORMS ] -------------- */
+#s,#submit { background-color:#ffffff; border:1px solid #cccccc; color:#505050; font-size:0.9em; margin:0 0 16px; padding:4px; width:130px; }
+#author,#email,#url,#comment { border:1px solid #cccccc; font-family:Book Antiqua,Verdana,Tahoma,Arial,Sans-Serif; font-size:1em; margin:0; padding:4px; }
+#commentsection { margin:25px 0 0; }
+#commentsection p { margin:0 0 6px; }
+
+/* ------------- [ FLOAT FIX ] -------------- */
+.contenttext { overflow:hidden; }
+* html .contenttext { height:1px; overflow:visible; }
+* html .contenttext p { overflow:hidden; width:99%; }
+
+/* ------------- [ IMAGES ALIGN ] -------------- */
+img.centered { display:block; margin-left:auto; margin-right:auto; }
+img.alignright { padding:4px; margin:0 0 2px 7px; display:inline; }
+img.alignleft { padding:4px; margin:0 7px 2px 0; display:inline; }
+.alignright { float:right; }
+.alignleft { float:left; }
+
+/* ------------- [ VARIOUS CLASSES ] -------------- */
+.left { border:1px solid #cccccc; float:left; margin:10px 15px 10px 0; }
+.right { border:1px solid #cccccc; float:right; margin:10px 0 5px 10px; }
+.center { border:1px solid #aaaaaa; margin:5px auto 12px; text-align:center; }
+.textright { text-align:right; }
+.small { font-size:0.8em; }
+.bold { font-weight:bold; }
+.hide { display:none; }
+.post { margin:0 0 25px; }
+.postinfo { background-color:#f4f4f4; border-left:0px solid #cccccc; color:#606060; font-size:0.9em; font-weight:bold; line-height:1.5em; margin:1px 0 30px; padding:8px 5px 8px 8px; }
+.comment { background-color:#f4f4f4; border-left:0px solid #cccccc; color:#606060; margin:0 0 10px; padding:8px 5px 0 8px; }
+.comment p { font-size:0.9em; line-height:1.3em; margin:0 0 6px; padding-bottom:5px; }
+.gravatarside { float:right; width:48px; height:48px; margin:0 5px 5px 5px; }
+.navigation { display:block; margin:10px 0 20px 0; padding:0; text-align:center; }
+.navigation p { margin:0; padding:0; }
+.prevlink { margin-right:20px; }
+.nextlink { margin-left:20px; }

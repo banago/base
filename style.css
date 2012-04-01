@@ -1,0 +1,99 @@
+/*
+Theme Name: Base
+Theme URI: http://wplancer.com/theme/base/
+Description: Search engine optimized theme built by <a href="http://www.wplancer.com/">Baki Goxhaj</a> and designed by RoosterComm.
+Version: 1.0
+Author: Baki Goxhaj (aka Banago)
+Author URI: http://www.wplancer.com
+Tags: 3 columns, white, widgets, fixed width, blue, gravatars, business, search engine optimized,
+*/
+
+/* ------------- [ GLOBAL ] -------------- */
+* { margin: 0; padding: 0; }
+
+/* ------------- [ BODY ] -------------- */
+body { background: #E5E5E5; font: normal 14px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+.wrap { margin: 0 auto; width: 940px; padding: 20px; background: #fff;  box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.2); }
+
+/* ------------- [ FLOATS ] -------------- */
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+img.alignright { margin-left: 12px; }
+img.alignleft { margin-right: 12px; }
+
+/* ------------- [ LINKS ] -------------- */
+a { color: #286ea0; text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; outline: 0 none; }
+a img { border:0; }
+
+/* ------------- [ FORMS ] -------------- */
+input[type=text],
+input[type=password],
+textarea { background: #fafafa; box-shadow: inset 0 1px 1px rgba(0,0,0,0.1); border: 1px solid #ddd; color: #888; }
+input[type=text]:focus, textarea:focus { color: #373737; }
+textarea { padding-left: 3px; width: 98%; }
+input[type=text] { padding: 3px; }
+
+input#s { border-radius: 2px; font-size: 14px; height: 22px; line-height: 1.2em; padding: 4px 10px 4px 28px;
+			 background: url('img/search.png') no-repeat 5px 6px; }
+input#searchsubmit { display: none; }
+
+/* ------------- [ HEADER ] -------------- */
+header { overflow: hidden; }
+header hgroup { float: left; }
+header #searchform { float: right; }
+
+/* Assistive text */
+.assist { position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px, 1px, 1px, 1px); }
+
+
+/* ------------- [ MENU ] -------------- */
+.nav { overflow: hidden; clear: both; padding: 20px 0; }
+.nav ul { list-style: none; }
+.nav li { float: left; }
+.nav li a { margin-right: 25px; }
+.nav li a:hover, .nav li.current-page-item a { text-decoration: underline; }
+.nav li:hover{ /* IE7 Fix */ position: static; }
+.nav li ul { position: absolute; background: #404041; left: -999px; z-index: 999; }
+.nav li ul li { float: none; padding: 5px 8px; } 
+.nav li ul li a { color: #fff; font-size: 12px; } 
+.nav li ul ul { /* third-and-above-level lists */ margin: -18px 0 0 139px; }
+.nav li:hover ul ul, .nav li:hover ul ul ul { left: -999em; }
+.nav li:hover ul, .nav li li:hover ul, .nav li li li:hover ul { left: auto; }
+
+
+/* ------------- [ CONTENT ] -------------- */
+.content p { margin-bottom: 12px; }
+.content ul, .content ol { margin: 0 0 12px 20px; } 
+.content  blockquote { border-left: 1px solid #e0e0e0; margin: 12px; padding:8px 8px 8px 15px; }
+.content  blockquote p { color: #505050; font-size: 0.9em; line-height: 1.3em; }
+.content  label { color: #606060; font-size: 0.9em; font-weight: bold; }
+
+
+article { float: left; width: 620px; }
+
+.post { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
+
+.meta { margin: 12px 0; font-size: 11px; font-variant: small-caps; }
+
+/* Pagination */
+.pagination { overflow: hidden; margin-bottom: 20px; text-align: center; }
+.pagination a { display: inline-block; width: 22px; height: 22px; margin-right: 5px; line-height: 23px; text-align: center; color: #c6c6c6; border: 1px solid #c6c6c6; }
+.pagination a:hover, .pagination a.current { color: #444; border: 1px solid #999; }
+.pagination .jump { width: auto; padding: 0 8px; }
+
+
+/* ------------- [ SIDEBARS ] -------------- */
+aside { float: right; width: 300px; }
+
+
+
+/* ------------- [ FOOTER ] -------------- */
+footer { border-top: 1px solid #e0e0e0; font-size: 0.9em; clear: both; color: #777; line-height:1.7em; padding-top: 10px; text-align: center; }
+footer a { color: #777; }
+footer a:hover { color: #555; text-decoration: underline; }
+footer span.credits { font-size: 1.1em; }

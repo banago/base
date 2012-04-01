@@ -81,7 +81,6 @@ article { float: left; width: 620px; }
 .pagination a:hover, .pagination a.current { color: #444; border-color: #999; text-decoration: none; }
 .pagination .jump { width: auto; padding: 0 8px; }
 
-
 /* ------------- [ SIDEBARS ] -------------- */
 aside { float: right; width: 300px; }
 
@@ -90,7 +89,5 @@ aside { float: right; width: 300px; }
 .widget ul, .widget ol { margin-left: 17px; }
 
 /* ------------- [ FOOTER ] -------------- */
-footer { border-top: 1px solid #e0e0e0; font-size: 0.9em; clear: both; color: #777; line-height:1.7em; padding-top: 10px; text-align: center; }
-footer a { color: #777; }
-footer a:hover { color: #555; text-decoration: underline; }
-footer span.credits { font-size: 1.1em; }
+footer { overflow: hidden; color: #555; font-size: 12px; padding-top: 10px; text-align: center; border-top: 1px solid #e0e0e0; }
+

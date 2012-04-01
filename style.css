@@ -38,13 +38,13 @@ input[type=text]:focus, textarea:focus { color: #373737; }
 textarea { padding: 0 0 3px; width: 80%; }
 
 /* Search Form */
-input#s { border-radius: 2px; font-size: 14px; height: 22px; line-height: 1.2em; padding: 4px 10px 4px 28px; background: url('img/search.png') no-repeat 5px 6px; }
+input#s { font-size: 14px; height: 22px; line-height: 1.2em; padding-left: 28px; background: url('img/search.png') no-repeat 5px 6px; }
 input#searchsubmit { display: none; }
 
 /* ------------- [ HEADER ] -------------- */
-header { overflow: hidden; }
-header hgroup { float: left; }
-header #searchform { float: right; }
+.header { overflow: hidden; }
+.header hgroup { float: left; }
+.header #searchform { float: right; }
 
 /* ------------- [ MENU ] -------------- */
 .nav { overflow: hidden; clear: both; padding: 20px 0; }
@@ -65,7 +65,7 @@ header #searchform { float: right; }
 /* ------------- [ CONTENT ] -------------- */
 .content { overflow: hidden; }
 
-article { float: left; width: 620px; }
+.posts { float: left; width: 620px; }
 
 .post { overflow: hidden; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
 .post p { margin-bottom: 12px; }
@@ -82,7 +82,7 @@ article { float: left; width: 620px; }
 .pagination .jump { width: auto; padding: 0 8px; }
 
 /* ------------- [ SIDEBARS ] -------------- */
-aside { float: right; width: 300px; }
+.sidebar { float: right; width: 300px; }
 
 .widget { margin-bottom: 20px; }
 .widget h3 { margin-bottom: 12px; }
@@ -90,4 +90,41 @@ aside { float: right; width: 300px; }
 
 /* ------------- [ FOOTER ] -------------- */
 footer { overflow: hidden; color: #555; font-size: 12px; padding-top: 10px; text-align: center; border-top: 1px solid #e0e0e0; }
+
+/* ----------------------- [ Responsive ] ----------------------- */
+
+@media (max-width: 800px) {
+
+	.wrap { width: auto; margin-left: 8px; margin-right: 4px; }
+	
+	/* single */
+	.posts { width: 62% }
+	.sidebar { width: 32%; }
+	
+	/* Make sure embeds fit their containers */
+	iframe, embed, object { width: 100%; height: auto; }
+	
+}
+@media (max-width: 650px) {
+
+	.wrap { width: auto; margin: 0 10px; }
+
+	.posts { width: auto; }
+	.sidebar { width: auto; }
+	
+	/* Reduce font-sizes for better readability on smaller devices */
+	.post p { font-size: 13px; line-height: 18px; margin-bottom: 10px; }	
+
+	/* Floated content doesn't work well at this size */
+	.alignleft, .alignright { float: none; margin-left: 0; margin-right: 0; }
+
+}
+@media (max-width: 450px) {
+/* Mobile Portrait general style only */
+
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+/* Few styles for iPhone only that have not address in the general view */
+}
 

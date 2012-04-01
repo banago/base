@@ -21,7 +21,7 @@
 
 <div class="wrap">
 
-	<header id="head" role="banner">
+	<header class="header" role="banner">
 	
 		<hgroup>
 			<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>

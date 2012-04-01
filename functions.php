@@ -155,7 +155,7 @@ function the_pagination( $range = 4, $wrap = true ){
 		if( $paged != 1 ) {
 			echo '<a class="jump first" href=' . get_pagenum_link( 1 ) . '>First</a>';
 			// To the previous page
-			echo '<a href="'. previous_posts( false ) .'" class="prev">&larr;</a>';
+			echo '<a href="'. previous_posts( false ) .'" class="prev"> « </a>';
 			//previous_posts_link(' « ');
 		}
 	
@@ -199,7 +199,7 @@ function the_pagination( $range = 4, $wrap = true ){
 	}
 
 	// Next page
-	echo '<a href="'. next_posts( 0, false ) .'" class="next">&rarr;</a>';
+	echo '<a href="'. next_posts( 0, false ) .'" class="next"> » </a>';
 	//next_posts_link(' » '); 
 	
 	// On the last page, don't put the Last page link

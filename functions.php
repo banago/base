@@ -1,30 +1,38 @@
 <?php
 
-// Page Excerpts
-add_post_type_support('page', 'excerpt');
-
-// Custom Menus
+/**
+ * Custom Nav Menus
+ */
 register_nav_menus( array(
 	'head' => 'Header Menu',
 	'foot' => 'Footer Menu'
 	) );
 
 
-// Add support for Featured Images
+/**
+ * Featured Images
+ */
 add_theme_support('post-thumbnails' );
-add_image_size('slider', 980, 400, true );
-add_image_size('blog', 560, 999 );
-add_image_size('folio', 220, 125, true );
-add_image_size('single-folio', 720, 400, true );
+	add_image_size('hard', 980, 400, true );
+	add_image_size('flex', 560, 999 );
 
-
+/**
+ * Widgetized Sections
+ */
 function base_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __( 'Default Sidebar', 'base' ),
+		'name' => __( 'Sidebar', 'base' ),
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer', 'base' ),
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+		'before_widget' => '<div id="%1$s" class="footget %2$s">',
 		'after_widget' => '</div>',
 	) );
 }
@@ -43,36 +51,25 @@ function scripts_and_styles() {
 }
 add_action('wp_enqueue_scripts', 'scripts_and_styles');
 
-/**
-* Subtitle
-* Easy to use custom filed based subtitles
-*/
-function the_subtitle() {
-	global $post;
-	
-	echo get_post_meta( $post->ID, '_mth_subtitle', true );	
-	
-}
-
 function columns_shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'no' => '1/3',
-		), $atts ) );
+	), $atts ) );
 		
-		list( $no, $all ) = explode( '/', $no );
+	list( $no, $all ) = explode( '/', $no );
 
-		if( $all % 2 == 0 ) $class = 'two';		
-		if( $all % 3 == 0 ) $class = 'three';		
-		if( $all % 4 == 0 ) $class = 'four';		
-		if( $all % 5 == 0 ) $class = 'five';		
-		if( $all % 6 == 0 ) $class = 'six';		
-		
-		if( $no == 1 )
-			$col = '<div class="cols"><div class="col col-'. $no .' '. $class .'  first">' . $content . '</div>'; 		
-		elseif( $no > 1 && $no != $all )
-			$col = '<div class="col col-'. $no .' '. $class .'">' . $content . '</div>';
-		else 
-			$col = '<div class="col col-'. $no .' '. $class .' last">' . $content . '</div></div>'; 		
+	if( $all % 2 == 0 ) $class = 'two';		
+	if( $all % 3 == 0 ) $class = 'three';		
+	if( $all % 4 == 0 ) $class = 'four';		
+	if( $all % 5 == 0 ) $class = 'five';		
+	if( $all % 6 == 0 ) $class = 'six';		
+	
+	if( $no == 1 )
+		$col = '<div class="cols"><div class="col col-'. $no .' '. $class .'  first">' . $content . '</div>'; 		
+	elseif( $no > 1 && $no != $all )
+		$col = '<div class="col col-'. $no .' '. $class .'">' . $content . '</div>';
+	else 
+		$col = '<div class="col col-'. $no .' '. $class .' last">' . $content . '</div></div>'; 		
 
 	return $col;
 }

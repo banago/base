@@ -24,7 +24,7 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 img.alignright { margin: 4px 0 0 12px; }
 img.alignleft { margin-right: 4px 12px 0 0; }
 
-/* Assistive text */
+/* Hide label text */
 .assist { position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px, 1px, 1px, 1px); }
 
 /* ------------- [ LINKS ] -------------- */
@@ -51,7 +51,7 @@ input#searchsubmit { display: none; }
 .nav { overflow: hidden; clear: both; padding: 20px 0; }
 .nav ul { list-style: none; }
 .nav li { float: left; }
-.nav li a { display: block; padding: 5px 	12px; }
+.nav li a { display: block; padding: 5px 12px; }
 .nav li a:hover, .nav li.current-menu-item a { text-decoration: none; background: #ddd; }
 .nav li:hover{ /* IE7 Fix */ position: static; background: #ddd; }
 .nav li ul { position: absolute; background: #ddd; left: -999px; z-index: 999; }
@@ -90,7 +90,7 @@ input#searchsubmit { display: none; }
 .widget ul, .widget ol { margin-left: 17px; }
 
 /* ------------- [ FOOTER ] -------------- */
-footer { overflow: hidden; color: #555; font-size: 12px; padding-top: 10px; text-align: center; border-top: 1px solid #e0e0e0; }
+.footer { overflow: hidden; color: #555; font-size: 12px; padding-top: 10px; text-align: center; border-top: 1px solid #e0e0e0; }
 
 /* ----------------------- [ Responsive ] ----------------------- */
 

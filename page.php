@@ -1,21 +1,21 @@
 
 <?php get_header(); ?>
 
-	<article class="posts" role="main">
+	<div class="posts" role="main">
 	
 		<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 	
-		<div class="post">
+		<article class="post">
 
 			<h2><?php the_title(); ?></h2>
 			
 			<?php the_content(); ?>
 
-		</div>
+		</article>
 			
 		<?php endwhile; endif; ?>
 		
-	</article>
+	</div>
 
 	<?php get_sidebar(); ?>
 

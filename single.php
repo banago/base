@@ -1,11 +1,11 @@
 
 <?php get_header(); ?>
 
-	<article class="posts" role="main">
+	<div class="posts" role="main">
 	
-		<?php if( have_posts() ) : ?><?php while( have_posts() ) : the_post(); ?>
+		<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 	
-		<div class="post">
+		<article class="post">
 
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
@@ -19,13 +19,13 @@
 			
 			<?php the_content(); ?>
 
-		</div>
+		</article>
 			
 		<?php endwhile; endif; ?>
-		
+
 		<?php comments_template(); ?>
-		
-	</article>
+				
+	</div>
 
 	<?php get_sidebar(); ?>
 

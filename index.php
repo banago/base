@@ -1,11 +1,11 @@
 
 <?php get_header(); ?>
 
-	<article class="posts" role="main">
+	<div class="posts" role="main">
 	
 		<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 	
-		<div class="post">
+		<article class="post">
 
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
@@ -19,7 +19,7 @@
 			
 			<?php the_content(); ?>
 
-		</div>
+		</article>
 			
 		<?php endwhile; ?>
 			
@@ -27,15 +27,15 @@
 				
 		<?php else : ?>
 
-			<div class="post">
+			<article class="post">
 				<h2>Not found!</h2>
 				<p>Could not find the requested page. Use the navigation menu to find your target, or use the search box below:</p>
 				<?php get_search_form(); ?>
-			</div>
+			</article>
 			
 		<?php endif; ?>
 		
-	</article>
+	</div>
 
 	<?php get_sidebar(); ?>
 

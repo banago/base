@@ -8,7 +8,6 @@ register_nav_menus( array(
 	'foot' => 'Footer Menu'
 	) );
 
-
 /**
  * Featured Images
  */
@@ -101,6 +100,29 @@ function shorten( $len, $str = '', $more = 'Read more &rarr;', $cut = true ) {
 	else
 		echo ( $cut ? substr( $str, 0, strrpos( substr( $str, 0, $len ), ' ' ) ) : substr( $str, 0, $len ) ) . '... ' . $read;
 
+}
+
+/**
+ * The Breadcrumb
+ * Adds a simple but highly customizable breadcrumb to your WordPress website
+ * @author: Baki Goxhaj of WPlancer.Com 
+ */
+function the_breadcrumb( $sep = ' / ' ) {
+		$out = '<a href="'. get_bloginfo('url') .'">Home</a>';
+		if( is_category() ) 
+			$out .= $sep . single_cat_title( '', false );
+		if( is_single() )
+			$out .= $sep . get_the_category_list( $sep, 'multiple') . $sep . single_post_title( '', false );
+		if( is_page() )
+			$out .= $sep . single_post_title( '', false );
+		if( is_singular('event') ) 
+			$out .= $sep . '<a href="' . get_permalink(371) . '">Events</a>' . $sep . single_post_title( '', false ); 
+		if( is_search() )
+			$out .= $sep . 'Search results for "' . get_search_query() . '"';
+		if( is_author() )
+			$out .= $sep . 'All posts by ' . get_the_author_meta( 'display_name', get_query_var('author') );
+			
+		echo $out;
 }
 
 function the_location() {
@@ -208,124 +230,3 @@ function the_pagination( $range = 4, $wrap = true ){
 	endif;
 }
 
-function curl( $url ) {
-	$ch = curl_init( $url );
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_HEADER, 0 );
-	//curl_setopt($ch, CURLOPT_USERAGENT, "yourdomain.com");
-	curl_setopt($ch, CURLOPT_TIMEOUT, 10 );
-	$data = curl_exec( $ch );
-	curl_close( $ch );
-	return $data;
-}
-
-
-/**
- * Fetch the number of fans from Twitter XML API
- *
- * @author Baki Goxhaj
- * @copyright MonsterThemes
- * @version 0.1
- *
- * @param string $user
- * @return string
- */
-function followers( $user ) {
-	
-	$xml = curl('http://twitter.com/users/show/' . $user ); 
-	
-	if( $xml ) :
-		$obj = simplexml_load_string( $xml );
-		return $obj->followers_count;
-	else :
-	 return 0; 
-	endif;
-}
-
-/**
- * Fetch the number of fans from Facebook Graph API
- *
- * @author Baki Goxhaj
- * @copyright MonsterThemes
- * @version 0.1
- *
- * @param string $page
- * @return string
- */
- function fans( $page ) {
-	
-	$json = curl('https://graph.facebook.com/' . $page );	
-	
-	if( $json ) :
-		$obj = json_decode( $json );
-		return $obj->likes;
-	else :
-	 return 0; 
-	endif;
-
-}	
-	
-/**
- * Fetch the number of subscribers from Feedburner Awareness API
- *
- * @author Baki Goxhaj
- * @copyright MonsterThemes
- * @version 0.1
- *
- * @param string $website
- * @return string
- */
-function subscribers( $website ) {
-	
-	$xml = curl('https://feedburner.google.com/api/awareness/1.0/GetFeedData?uri=' . $website );	
-	
-	if( $xml ) :
-		$obj = simplexml_load_string( $xml );
-		return $obj->feed->entry['circulation'];
-	else :
-	 return 0; 
-	endif;
-
-}
-
-function related_posts( $tax = 'post_tag', $n = 3 ) {
-	global $post;
-	
-	$terms = wp_get_post_terms( $post->ID, $tax );
-	
-	if( $terms ) : 
-		foreach( $terms as $term ) $term_ids[] = $term->term_id;
-
-		$args = array(
-			//'tag__in' => array( implode( ',', $tag_ids ) ),
-			'post__not_in' => array( $post->ID ),
-			'posts_per_page' => $n,
-			'ignore_sticky_posts' => 1,
-			'tax_query' => array(
-				array(
-					'taxonomy' => $tax,
-					'field' => 'id',
-					'terms' => array( implode( ',', $term_ids ) )
-					)
-				)
-			);
-
-	$rel_posts = new WP_Query( $args );
-	while( $rel_posts -> have_posts() ) : $rel_posts -> the_post(); ?> 	
-
-				<div class="related">
-					<a href="<?php the_permalink(); ?>" rel="lightbox" title="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail('folio'); ?>
-					</a>
-				
-					<div class="reltent">
-						<h2><?php the_title(); ?></h2>
-						<p><?php shorten( 110, '', '' ); ?></p>
-						<p><a class="more" href="<?php the_permalink(); ?>" >View Project</a></p>
-					</div>
-				</div><!-- related-post -->
-
-	<?php endwhile; wp_reset_query();
-
-endif; // if( $terms ) :
-}

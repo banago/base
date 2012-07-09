@@ -28,8 +28,8 @@
 		<?php else : ?>
 
 			<article class="post">
-				<h2>Not found!</h2>
-				<p>Could not find the requested page. Use the navigation menu to find your target, or use the search box below:</p>
+				<h2><?php _e('Not found!', 'base'); ?></h2>
+				<p><?php _e('Could not find the requested page. Use the navigation menu to find your target, or use the search box below:', 'base'); ?></p>
 				<?php get_search_form(); ?>
 			</article>
 			

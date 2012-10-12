@@ -76,6 +76,14 @@ add_shortcode( 'column', 'columns_shortcode' );
 
 
 /**
+* Is Ajax?
+* Check if it is an ajax request
+*/
+function is_ajax() {
+  return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
+}
+
+/**
 * Shorten
 * Get part of the content by defining the number of characters.
 *

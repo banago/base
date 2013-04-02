@@ -250,33 +250,24 @@ function the_pagination( $range = 4, $wrap = true ){
 }
 
 
-
 /**
- * Show Recent Comments
+ * Update Contacct Fields
  *
- * @author Baki Goxhaj
- * @link http://wplancer.com/how-to-display-recent-comments-without-using-a-plugin-or-widget/ 
- *
- * @param string/integer $no_comments
- * @param string/integer $comment_len
- * @param string/integer $avatar_size
- * 
- * @echo string $comm
  */
-function bg_recent_comments($no_comments = 5, $comment_len = 80, $avatar_size = 48) {
-
-	$comments_query = new WP_Comment_Query();
-	$comments = $comments_query->query( array( 'number' => $no_comments ) );
-	
-	$comm = '';
-	if ( $comments ) : foreach ( $comments as $comment ) :
-		$comm .= '<li>' . get_avatar( $comment->comment_author_email, $avatar_size );
-		$comm .= '<a class="author" href="' . get_permalink( $comment->post_ID ) . '#comment-' . $comment->comment_ID . '">';
-		$comm .= get_comment_author( $comment->comment_ID ) . ':</a> ';
-		$comm .= '<p>' . strip_tags( substr( apply_filters( 'get_comment_text', $comment->comment_content ), 0, $comment_len ) ) . '</p></li>';
-	endforeach; else :
-		$comm .= 'No comments.';
-	endif;
-	
-	echo $comm;	
+function base_contact_methods( $contactmethods ) {
+ 
+    // Remove we what we don't want
+    unset( $contactmethods['aim'] );
+    unset( $contactmethods['yim'] );
+    unset( $contactmethods['jabber'] );
+ 
+    // Add some useful ones
+    $contactmethods['twitter'] = 'Twitter Username';
+    $contactmethods['facebook'] = 'Facebook Profile URL';
+    $contactmethods['linkedin'] = 'LinkedIn Public Profile URL';
+    $contactmethods['googleplus'] = 'Google+ Profile URL';
+ 
+    return $contactmethods;
 }
+ 
+add_filter( 'user_contactmethods', 'base_contact_methods' );

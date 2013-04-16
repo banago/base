@@ -2,9 +2,13 @@
 Theme Name: Base
 Theme URI: http://wplancer.com/theme/base/
 Description: A basic HTML5 responsive WordPress theme built by <a href="http://www.wplancer.com/">WPlancer.Com</a>.
-Version: 0.2
 Author: Banago
 Author URI: http://wplancer.com/
+Version: 0.9
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: base
 */
 
 /* ------------- [ NORMALIZE ] -------------- */
@@ -39,6 +43,17 @@ body { background: #E5E5E5; font: normal 14px "HelveticaNeue-Light", "Helvetica 
 img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 img.alignright { margin: 4px 0 0 12px; }
 img.alignleft { margin-right: 4px 12px 0 0; }
+
+.wp-caption { background: #fff;  border: 1px solid #f0f0f0; max-width: 96%; padding: 5px 3px 10px; text-align: center; }
+.wp-caption.alignnone { margin: 5px 20px 20px 0; }
+.wp-caption.alignleft { margin: 5px 20px 20px 0; }
+.wp-caption.alignright { margin: 5px 0 20px 20px; }
+.wp-caption img { border: 0 none; height: auto; margin: 0; max-width: 98.5%; padding: 0; width: auto; }
+.wp-caption p.wp-caption-text { font-size: 11px; line-height: 17px; margin: 0; padding: 0 4px 5px; }
+
+.sticky { }
+.gallery-caption { }
+.bypostauthor { }
 
 /* Hide label text */
 .assist { position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px, 1px, 1px, 1px); }

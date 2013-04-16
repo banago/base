@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * Content Width
+ * 
+ * Using this feature you can set the maximum allowed width for any content 
+ * in the theme, like oEmbeds and images added to posts. 
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 620;
+
+/**
  * Custom Nav Menus
  */
 register_nav_menus( array(
@@ -186,7 +195,6 @@ function the_pagination(){
 
 /**
  * Update Contact Fields
- *
  */
 function base_contact_methods( $contactmethods ) {
  

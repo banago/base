@@ -110,9 +110,9 @@ input#searchsubmit { display: none; }
 
 /* Pagination */
 .pagination { overflow: hidden; margin-bottom: 20px; text-align: center; }
-.pagination a { display: inline-block; width: 22px; height: 22px; margin-right: 5px; line-height: 23px; text-align: center; border: 1px solid #c6c6c6; }
-.pagination a:hover, .pagination a.current { color: #444; border-color: #999; text-decoration: none; }
-.pagination .jump { width: auto; padding: 0 8px; }
+.pagination a, .pagination span { display: inline-block; width: 22px; height: 22px; margin-right: 5px; line-height: 23px; text-align: center; border: 1px solid #c6c6c6; }
+.pagination a:hover, .pagination .current { color: #444; border-color: #999; text-decoration: none; }
+.pagination .next, .pagination .prev { width: auto; padding: 0 8px; }
 
 /* ------------- [ SIDEBARS ] -------------- */
 .sidebar { float: right; width: 300px; }

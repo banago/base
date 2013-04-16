@@ -25,6 +25,11 @@ add_theme_support('post-thumbnails' );
 	add_image_size('flex', 560, 999 );
 
 /**
+ * Feed Links
+ */
+add_theme_support( 'automatic-feed-links' );
+
+/**
  * Widgetized Sections
  */
 function base_widgets_init() {
@@ -50,11 +55,11 @@ add_action( 'widgets_init', 'base_widgets_init' );
 function scripts_and_styles() {
 
 	if( is_singular() && comments_open() ) 
-		wp_enqueue_style('comment-style', get_bloginfo('template_url') . '/css/comments.css');
+		wp_enqueue_style('comment-style', get_template_directory_uri() . '/css/comments.css');
 
 	//wp_enqueue_script('jquery');
-	//wp_enqueue_script('cform', get_stylesheet_directory_uri() . '/js/cform.js', array('jquery'), NULL );
-	//wp_enqueue_script('custom', get_bloginfo('template_url') . '/js/custom.js', array('jquery'));
+	//wp_enqueue_script('cform', get_template_directory_uri() . '/js/cform.js', array('jquery'), NULL );
+	//wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', array('jquery'));
 
 }
 add_action('wp_enqueue_scripts', 'scripts_and_styles');
@@ -136,7 +141,7 @@ function get_first_paragraph( $str ) {
  * @author: Baki Goxhaj of WPlancer.Com 
  */
 function the_breadcrumb( $sep = ' / ' ) {
-		$out = '<a href="'. get_bloginfo('url') .'">Home</a>';
+		$out = '<a href="'. home_url() .'">Home</a>';
 		if( is_category() ) 
 			$out .= $sep . single_cat_title( '', false );
 		if( is_single() )

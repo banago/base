@@ -13,7 +13,7 @@
 		
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	
-	<!--[if lt IE 9]><script src="<?php bloginfo( 'template_url' ); ?>/js/html5.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script><![endif]-->
 	
 	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
@@ -26,7 +26,7 @@
 	<header class="header" role="banner">
 	
 		<hgroup>
-			<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+			<h1><a href="<?php echo home_url() ?>"><?php bloginfo('name'); ?></a></h1>
 			<em><?php bloginfo('description'); ?></em>
 		</hgroup>
 		

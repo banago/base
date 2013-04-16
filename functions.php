@@ -165,93 +165,27 @@ function the_location() {
 	echo $where;
 }
 
-
 /**
-* A pagination function
-* @param integer $range: The range of the slider, works best with even numbers
-* Used WP functions:
-* get_pagenum_link($i) - creates the link, e.g. http://site.com/page/4
-* previous_posts_link(' « '); - returns the Previous page link
-* next_posts_link(' » '); - returns the Next page link
-*/
-function the_pagination( $range = 4, $wrap = true ){
-	// $paged - number of the current page
-	global $paged, $wp_query;
+ * The pagination function
+ */
+function the_pagination(){
 
-	// How many pages do we have?  
-	if( !isset( $max_page ) )
-		$max_page = $wp_query->max_num_pages;
-
-	// We need the pagination only if there is more than 1 page
-	if( $max_page > 1 ) :
-
-		if( $wrap == true ) echo '<div class="pagination">';		
-		
-		if ( !$paged ) $paged = 1;
+	global $wp_query;
 	
-		// On the first page, don't put the First page link
-		if( $paged != 1 ) {
-			echo '<a class="jump first" href=' . get_pagenum_link( 1 ) . '>First</a>';
-			// To the previous page
-			echo '<a href="'. previous_posts( false ) .'" class="prev"> « </a>';
-			//previous_posts_link(' « ');
-		}
+	$big = 999999999; // need an unlikely integer
+
+	$nav = paginate_links( array(
+		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format' => '?paged=%#%',
+		'current' => max( 1, get_query_var('paged') ),
+		'total' => $wp_query->max_num_pages
+	) );
 	
-		// We need the sliding effect only if there are more pages than is the sliding range
-		if ( $max_page > $range ) {
-			// When closer to the beginning
-			if ( $paged < $range ) {
-				for( $i = 1; $i <= ( $range + 1 ); $i++ ) :
-					echo '<a href="' . get_pagenum_link( $i ) .'"';
-					if( $i == $paged ) echo 'class="current"';
-					echo ">$i</a>";
-				endfor;
-		}
-
-		// When closer to the end
-		elseif( $paged >= ( $max_page - ceil(( $range/2 )) ) ) {
-			for( $i = $max_page - $range; $i <= $max_page; $i++ ) :
-				echo "<a href='" . get_pagenum_link($i) ."'";
-				if( $i==$paged) echo "class='current'";
-				echo ">$i</a>";
-			endfor;
-		}
-
-		// Somewhere in the middle
-		elseif( $paged >= $range && $paged < ($max_page - ceil(($range/2)))){
-			for($i = ($paged - ceil($range/2)); $i <= ($paged + ceil(($range/2))); $i++):
-				echo "<a href='" . get_pagenum_link($i) ."'";
-				if($i==$paged) echo "class='current'";
-				echo ">$i</a>";
-			endfor;
-		}
-	}
-
-	// Less pages than the range, no sliding effect needed
-	else {
-		for( $i = 1; $i <= $max_page; $i++ ) :
-			echo "<a href='" . get_pagenum_link($i) ."'";
-			if($i==$paged) echo "class='current'";
-			echo ">$i</a>";
-		endfor;
-	}
-
-	// Next page
-	echo '<a href="'. next_posts( 0, false ) .'" class="next"> » </a>';
-	//next_posts_link(' » '); 
-	
-	// On the last page, don't put the Last page link
-	if( $paged != $max_page )
-		echo '<a class="jump last" href=' . get_pagenum_link( $max_page ) . '>Last</a>';
-
-	if( $wrap == true ) echo '</div>';		
-
-	endif;
+	echo '<div class="pagination">', $nav, '</div>';
 }
 
-
 /**
- * Update Contacct Fields
+ * Update Contact Fields
  *
  */
 function base_contact_methods( $contactmethods ) {

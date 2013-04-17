@@ -27,7 +27,7 @@
 	
 		<hgroup>
 			<h1><a href="<?php echo home_url() ?>"><?php bloginfo('name'); ?></a></h1>
-			<em><?php bloginfo('description'); ?></em>
+			<h2><?php bloginfo('description'); ?></h2>
 		</hgroup>
 		
 		<?php get_search_form(); ?>

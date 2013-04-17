@@ -31,9 +31,10 @@ img, figure { border: 0; -ms-interpolation-mode: bicubic; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* ------------- [ BODY ] -------------- */
-body { background: #E5E5E5; font: normal 14px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+body { background: #e2e2e2; }
+body, input, textarea { color: #373737; font: 300 15px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.wrap { margin: 0 auto; width: 940px; padding: 20px; background: #fff; box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.2); }
+.wrap { margin: 2em auto; width: 940px; padding: 30px; border-top: 2px solid #bbb; background: #fff; }
 
 /* ------------- [ FLOATS ] -------------- */
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
@@ -55,12 +56,22 @@ img.alignleft { margin-right: 4px 12px 0 0; }
 .gallery-caption { }
 .bypostauthor { }
 
+/* Table Style - very handy for WP Calendar */
+table { border: 1px solid #e5e5e5; width: 100% }
+table a { font-weight: bold; font-size: 15px; }
+table caption { font-variant: small-caps; font-size: 15px;  }
+tbody .pad { background: #eee; }
+thead > tr > th { width: 20px; line-height: 28px; text-align: center; background: #eee; border: 1px solid #e5e5e5; }
+tbody > tr > td { height: 20px; padding: 6px 7px; text-align: center; border: 1px dotted #e5e5e5; }
+tfoot > tr > td#prev { width: 58px; height: 20px; text-align: left; background: #fff; padding-left: 5px; }
+tfoot > tr > td#next { width: 58px; height: 20px; text-align: right; background: #fff; padding-right: 5px; }
+
 /* Hide label text */
 .assist { position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px, 1px, 1px, 1px); }
 
 /* ------------- [ LINKS ] -------------- */
-a { color: #286ea0; text-decoration: none; }
-a:hover, a:focus { text-decoration: underline; outline: 0 none; }
+a { color: #1bafe0; text-decoration: none; }
+a:hover, a:focus, a:active { text-decoration: underline; outline: 0 none; }
 a img { border:0; }
 
 /* ------------- [ FORMS ] -------------- */
@@ -76,6 +87,9 @@ input#searchsubmit { display: none; }
 
 /* ------------- [ HEADER ] -------------- */
 .header { overflow: hidden; }
+.header h1 a { font-size: 30px; line-height: 36px; text-decoration: none; color: #111; }
+.header h1 a:hover { color: #1bafe0; }
+.header h2 { font-size: 14px; font-weight: normal; color: #7a7a7a; }
 .header hgroup { float: left; }
 .header #searchform { float: right; }
 
@@ -98,15 +112,18 @@ input#searchsubmit { display: none; }
 /* ------------- [ CONTENT ] -------------- */
 .content { overflow: hidden; }
 
-.posts { float: left; width: 620px; }
+.posts { float: left; width: 600px; }
 
 .post { overflow: hidden; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
 .post p { margin-bottom: 12px; }
 .post ul, .post ol { margin: 0 0 12px 25px; } 
 .post blockquote { margin-bottom: 12px; padding: 10px; color: #505050; font-style: italic; }
 
+.post h1, .post h2, .post h1 a, .post h2 a  { color: #222; }
+.post h1 a:hover, .post h2 a:hover { color: #1bafe0; text-decoration: none; }
+
 .post .wp-post-image { float: left; margin: 4px 12px 0 0; }
-.post .meta { margin: 4px 0 12px; font-size: 12px; font-variant: small-caps; }
+.post .meta { clear: both; margin: 4px 0 12px; color: #666; font-size: 12px; line-height: 18px; }
 
 /* Pagination */
 .pagination { overflow: hidden; margin-bottom: 20px; text-align: center; }
